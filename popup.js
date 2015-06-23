@@ -16,3 +16,13 @@ for(var j = 0; j < num_buttons; j++)
 }
 
 
+var z = $('.UFILikeLink');
+
+num_buttons = z.length;
+
+for(var k = 0; k < num_buttons; k++)
+{
+    z[k].remove();
+}
+
+
