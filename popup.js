@@ -26,3 +26,47 @@ for(var k = 0; k < num_buttons; k++)
 }
 
 
+
+    
+function removeLikeIcons()
+{
+    $(document).on('DOMNodeInserted', function(e)
+    {
+    	console.log("hi")
+    	console.log(e);
+    	console.log(e.target)
+    	console.log(e.target.className)
+
+    	var element = e.target.find('.UFILikeIcon');
+    	if(element)
+    	{
+    		element.remove()
+    	}
+    });
+}
+
+
+function respondToNewElements()
+{
+    removeLikeIcons();
+
+}
+
+respondToNewElements();
+
+
+
+
+function removeLikeButtons()
+{
+    var likeButtons = $('a').find('span').filter(':contains("Like")');
+    var numButtons = likeButtons.length;
+
+    for (var k = 0; k < numButtons; k++)
+    {
+        $(document).on(likeButtons[k].attr('class'), function(e)
+        {
+        	console.log(e)
+        });
+    }
+}
